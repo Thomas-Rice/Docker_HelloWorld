@@ -1,7 +1,10 @@
 pipeline {
     agent { 
-        label 'docker'
-        docker { image 'python:3.5.1' } }
+        docker { 
+            image 'python:3.5.1' 
+            label 'docker' 
+            }
+        }
     stages {
         stage('build') {
             steps {
