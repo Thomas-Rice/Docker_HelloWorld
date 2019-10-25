@@ -1,9 +1,20 @@
+// pipeline {
+//     agent { dockerfile true }
+//     stages {
+//         stage('Test') {
+//             steps {
+//                     echo 'TOM'
+//             }
+//         }
+//     }
+// }
+
 pipeline {
-    agent { dockerfile true }
+    agent { docker { image 'python:3.5.1' } }
     stages {
-        stage('Test') {
+        stage('build') {
             steps {
-                    echo 'TOM'
+                sh 'python --version'
             }
         }
     }
